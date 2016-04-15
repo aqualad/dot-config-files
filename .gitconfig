@@ -1,0 +1,30 @@
+[user]
+name = Bryan Dodd
+email = aqualad@gmail.com
+[core]
+autocrlf = input
+excludesfile = /Users/aqualad/.gitignore_global
+
+[alias]
+st = status -sb
+ci = commit -v
+br = branch
+co = checkout
+ls = log --date=short --pretty=format:'%C(cyan)%h %C(red)%ad %C(blue)[%an]%C(magenta)%d %C(white)%s'
+dic = diff --color -w
+diff = diff --color
+	accept-theirs = "!f() { git checkout --theirs -- \\\"${@:-.}\\\"; git add -u \\\"${@:-.}\\\"; }; f"
+
+[diff]
+tool = vimdiff
+
+[apply]
+whitespace = strip
+
+[color]
+	ui = true
+
+[rerere]
+enabled = 1
+[push]
+	default = current
