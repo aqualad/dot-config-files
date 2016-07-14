@@ -15,6 +15,7 @@ alias nginx.logs.default-ssl.access='tail -250f /usr/local/etc/nginx/logs/defaul
 alias nginx.logs.phpmyadmin.error='tail -250f /usr/local/etc/nginx/logs/phpmyadmin.error.log'
 alias nginx.logs.phpmyadmin.access='tail -250f /usr/local/etc/nginx/logs/phpmyadmin.access.log'
 alias updatedb='sudo /usr/libexec/locate.updatedb'
+alias dirsizes='ls | du -chd 1 | sort'
 alias ayy="echo lmao"
 alias ayyy="echo lmao"
 alias chrome="open -a 'Google Chrome.app'"
