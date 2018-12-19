@@ -7,12 +7,14 @@ autocrlf = input
 excludesfile = /Users/aqualad/.gitignore_global
 
 [alias]
-st = status -sb
+st = status
 ci = commit -v
 br = branch
 co = checkout
 ls = log --date=short --pretty=format:'%C(cyan)%h %C(red)%ad %C(blue)[%an]%C(magenta)%d %C(white)%s'
 diff = diff --color
+cat = cat-file -p
+ff = pull --ff-only
 # DANGEROUS: run during a merge conflict to checkout "their" version of the files
 accept-theirs = "!f() { git checkout --theirs -- \\\"${@:-.}\\\"; git add -u \\\"${@:-.}\\\"; }; f"
 ignore = update-index --assume-unchanged
