@@ -20,10 +20,21 @@ source ~/.bash_aliases
 PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
 export PATH
 
+# Add /usr/local/sbin
+PATH="/usr/local/sbin:${PATH}"
+export PATH
+
+# Add ~/.local/ to PATH
+export PATH=$HOME/.local/bin:$PATH
+
 # Virtualenv
 export WORKON_HOME=~/Envs
 #export PROJECT_HOME=$HOME/Devel
-source /usr/local/bin/virtualenvwrapper.sh
+#source /usr/local/bin/virtualenvwrapper.sh
 
 # Brew github api token
 source ~/.secrets/homebrew_github_api_token
+
+# Start pyenv
+eval "$(pyenv init -)"
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
