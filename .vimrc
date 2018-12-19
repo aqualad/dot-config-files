@@ -3,6 +3,7 @@ syntax on
 set hlsearch
 au BufRead,BufNewFile *.json set filetype=json
 set background=dark
+set ts=4
 " Fix vimdiff colors
 "highlight DiffAdd cterm=none ctermfg=Black ctermbg=Green gui=none guifg=Black guibg=Green
 "highlight DiffDelete cterm=none ctermfg=Black ctermbg=Red gui=none guifg=Black guibg=Red
