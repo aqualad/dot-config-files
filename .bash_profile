@@ -38,3 +38,6 @@ source ~/.secrets/homebrew_github_api_token
 # Start pyenv
 eval "$(pyenv init -)"
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
+# Set aws creds as env vars
+[ -f ~/scripts/export_aws_creds.py ] && eval "$(python ~/scripts/export_aws_creds.py)"
