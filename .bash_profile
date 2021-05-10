@@ -43,5 +43,17 @@ export WORKON_HOME=~/Envs
 eval "$(pyenv init -)"
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+
 # Set aws creds as env vars
 #[ -f ~/scripts/export_aws_creds.py ] && eval "$(python ~/scripts/export_aws_creds.py)"
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+
+# Install docker bash completion https://docs.docker.com/compose/completion/
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
+[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
