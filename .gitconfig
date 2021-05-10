@@ -34,3 +34,6 @@ enabled = 1
 
 [push]
 default = current
+
+[blame]
+ignoreRevsFile = .git-blame-ignore-revs
