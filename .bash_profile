@@ -8,9 +8,12 @@ export HISTTIMEFORMAT="%d/%m/%y %T "
 
 alias diff="colordiff -y"
 
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-    . `brew --prefix`/etc/bash_completion
-fi
+# Load bash completion for git
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion || {
+    # if not found in /usr/local/etc, try the brew --prefix location
+    [ -f "$(brew --prefix)/etc/bash_completion.d/git-completion.bash" ] && \
+        . $(brew --prefix)/etc/bash_completion.d/git-completion.bash
+}
 #export PATH=$(brew --prefix homebrew/php/php54)/bin:/usr/local/sbin:/usr/local/bin:$PATH
 #PHP_AUTOCONF="/usr/local/bin/autoconf"
 
