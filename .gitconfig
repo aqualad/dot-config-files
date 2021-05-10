@@ -20,6 +20,10 @@ accept-theirs = "!f() { git checkout --theirs -- \\\"${@:-.}\\\"; git add -u \\\
 ignore = update-index --assume-unchanged
 unignore = update-index --no-assume-unchanged
 
+### Useful commands ###
+# Apply a single commit to HEAD
+# git show <commit> -- <path> | git apply -R
+
 [diff]
 tool = vimdiff
 
