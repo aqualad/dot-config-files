@@ -6,10 +6,8 @@ export HISTSIZE=1000000
 export HISTTIMEFORMAT="%d/%m/%y %T "
 export LSCOLORS=ExFxCxDxBxegedabagacad
 #export NVM_DIR="$HOME/.nvm"
-export PATH="$PYENV_ROOT/bin:$PATH"
 # export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
 export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u\[\033[01;32m\]@\[\033[01;34m\]\h\[\033[01;32m\]:\[\033[01;32m\]\w\[\033[01;34m\]\$\[\033[00m\] "
-export PYENV_ROOT="$HOME/.pyenv"
 export WORKON_HOME=~/Envs # Virtualenv
 export DEBUG_PRINT_LIMIT=999999 # react-testing-library full DOM output
 
@@ -34,12 +32,14 @@ export PKG_CONFIG_PATH="/opt/homebrew/opt/mysql-client@8.0/lib/pkgconfig"
 # Check if the current shell is a login shell
 # shopt -q login_shell && echo 'Login shell' || echo 'Not login shell'
 
+### PyENV ###
+# export PYENV_ROOT="$HOME/.pyenv"
+# export PATH="$PYENV_ROOT/bin:$PATH"
 # Init pyenv
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-
+# eval "$(pyenv init --path)"
+# eval "$(pyenv init -)"
 # Init pyenv-virtualenv
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+# if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 # Load NVM
 #[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
