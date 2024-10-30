@@ -1,9 +1,6 @@
 export CLICOLOR=1
 export DOCKER_ACCESS_TOKEN=9a6f3939-7a45-4e10-855b-32aae1b01c43
 export DOCKER_ENABLE_DEPRECATED_PULL_SCHEMA_1_IMAGE=1
-export HISTFILESIZE=1000000
-export HISTSIZE=1000000
-export HISTTIMEFORMAT="%d/%m/%y %T "
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u\[\033[01;32m\]@\[\033[01;34m\]\h\[\033[01;32m\]:\[\033[01;32m\]\w\[\033[01;34m\]\$\[\033[00m\] "
 export WORKON_HOME=~/Envs # Virtualenv
@@ -38,3 +35,6 @@ test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 
 # Load aliases
 source ~/.bash_aliases
+
+# Eternal Bash History (Keep at the bottom of the file)
+test -e "${HOME}/git/dot-config-files/scripts/bash_profile_helpers/force_eternal_history.sh" && source "${HOME}/git/dot-config-files/scripts/bash_profile_helpers/force_eternal_history.sh"
