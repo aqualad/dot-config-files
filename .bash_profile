@@ -11,20 +11,28 @@ export DEBUG_PRINT_LIMIT=999999 # react-testing-library full DOM output
 # export LDFLAGS="-L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/bzip2/lib"
 
 # Add Homebrew to the PATH
-eval "$(/opt/homebrew/bin/brew shellenv)"
+test -e "/opt/homebrew/bin/brew" && eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Configure build flags to use Brew's version of zlib & bzip2
-if which brew > /dev/null; then
-  export LDFLAGS="-L$(brew --prefix zlib)/lib -L$(brew --prefix bzip2)/lib -L$(brew --prefix mysql-client@8.0)/lib"
-  export CPPFLAGS="-I$(brew --prefix zlib)/include -I$(brew --prefix bzip2)/include -I$(brew --prefix mysql-client@8.0)/include"
+if test -e "/usr/local/go/bin"; then
+  # Set the GOPATH (only used to load installed binaries)
+  export GOPATH="$HOME/go"
+
+  # Add Go to the PATH
+  export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
 fi
 
-# Add MySQL to the path
-export PATH="/opt/homebrew/opt/mysql-client@8.0/bin:$PATH"
-export PKG_CONFIG_PATH="/opt/homebrew/opt/mysql-client@8.0/lib/pkgconfig"
+if which brew > /dev/null; then
+  # Configure build flags to use Brew's version of zlib & bzip2
+  export LDFLAGS="-L$(brew --prefix zlib)/lib -L$(brew --prefix bzip2)/lib -L$(brew --prefix mysql-client@8.0)/lib"
+  export CPPFLAGS="-I$(brew --prefix zlib)/include -I$(brew --prefix bzip2)/include -I$(brew --prefix mysql-client@8.0)/include"
 
-# Load ASDF
-[ -s "/opt/homebrew/opt/asdf/libexec/asdf.sh" ] && \. "/opt/homebrew/opt/asdf/libexec/asdf.sh"
+  # Add MySQL to the path
+  export PATH="/opt/homebrew/opt/mysql-client@8.0/bin:$PATH"
+  export PKG_CONFIG_PATH="/opt/homebrew/opt/mysql-client@8.0/lib/pkgconfig"
+
+  # Load ASDF
+  [ -s "/opt/homebrew/opt/asdf/libexec/asdf.sh" ] && \. "/opt/homebrew/opt/asdf/libexec/asdf.sh"
+fi
 
 # iTerm2 Bash Integration
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"

@@ -1,10 +1,11 @@
 [user]
 name = Bryan Dodd
-email = shhhhhitsasecret@donttell.com
+email = aqualad@gmail.com
 
 [core]
 autocrlf = input
 excludesfile = /Users/aqualad/.gitignore_global
+editor = vim
 
 [alias]
 st = status
